@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">HacktheNorth2019_Android</string>
+    <string name="app_name">PhysioCare</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "235198883945",
+    "firebase_url": "https://physiocare-acc14.firebaseio.com",
+    "project_id": "physiocare-acc14",
+    "storage_bucket": "physiocare-acc14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235198883945:android:25a4565f9a5c86b6c61af8",
+        "android_client_info": {
+          "package_name": "com.example.hackthenorth2019_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235198883945-fm7okrvagc3ik0rr3qeau6sfce5u1huf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYDV9w4wHW3-vHyIcjQke9iJTvdTzu38U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235198883945-fm7okrvagc3ik0rr3qeau6sfce5u1huf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
