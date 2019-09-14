@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "235198883945-sbpv01k34jbfemj7kl743g2kj9aqddrr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hackthenorth2019_android",
+            "certificate_hash": "e0b049e1e9a0d1a38bc44417fbe226d61efe01c4"
+          }
+        },
+        {
           "client_id": "235198883945-fm7okrvagc3ik0rr3qeau6sfce5u1huf.apps.googleusercontent.com",
           "client_type": 3
         }

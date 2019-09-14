@@ -13,6 +13,7 @@ class FirebaseUIActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_firebase_ui)
+        createSignInIntent()
     }
 
     private fun createSignInIntent() {
@@ -27,7 +28,7 @@ class FirebaseUIActivity : AppCompatActivity() {
             AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
-                .setTheme(R.style.AppTheme)
+                .setTheme(R.style.SignInTheme)
                 .build(),
             RC_SIGN_IN)
         // [END auth_fui_create_intent]
@@ -43,6 +44,8 @@ class FirebaseUIActivity : AppCompatActivity() {
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
                 val user = FirebaseAuth.getInstance().currentUser
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
                 // ...
             } else {
                 // Sign in failed. If response is null the user canceled the
@@ -54,15 +57,6 @@ class FirebaseUIActivity : AppCompatActivity() {
     }
     // [END auth_fui_result]
 
-    private fun signOut() {
-        // [START auth_fui_signout]
-        AuthUI.getInstance()
-            .signOut(this)
-            .addOnCompleteListener {
-                // ...
-            }
-        // [END auth_fui_signout]
-    }
 
     private fun delete() {
         // [START auth_fui_delete]
@@ -82,7 +76,7 @@ class FirebaseUIActivity : AppCompatActivity() {
             AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
-                .setLogo(R.drawable.ic_healing_black_24dp) // Set logo drawable
+                .setLogo(R.drawable.background) // Set logo drawable
                 .setTheme(R.style.AppTheme) // Set theme
                 .build(),
             RC_SIGN_IN)

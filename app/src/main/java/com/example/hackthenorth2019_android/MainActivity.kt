@@ -3,6 +3,7 @@ package com.example.hackthenorth2019_android
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.firebase.ui.auth.AuthUI
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         chat.setOnClickListener {
             goToChatActivity()
         }
+
+        logout.setOnClickListener {
+            signOut()
+        }
     }
 
     fun goToRehabActivity() {
@@ -37,6 +42,17 @@ class MainActivity : AppCompatActivity() {
     fun goToChatActivity() {
         val intent = Intent(this, ChatActivity::class.java)
         startActivity(intent)
+    }
+
+    fun signOut() {
+        // [START auth_fui_signout]
+        AuthUI.getInstance()
+            .signOut(this)
+            .addOnCompleteListener {
+                val intent = Intent(this, FirebaseUIActivity::class.java)
+                startActivity(intent)
+            }
+        // [END auth_fui_signout]
     }
 
 }
