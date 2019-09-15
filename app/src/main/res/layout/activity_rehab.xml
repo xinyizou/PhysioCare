@@ -29,16 +29,89 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
-                android:id="@+id/rehab"
+        <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/rehablivedata"
                 android:layout_marginVertical="1dp"
-                android:text="Rehab"
+                android:layout_marginHorizontal="4dp"
+                android:paddingHorizontal="10dp"
                 android:textColor="@color/colorLight"
-                android:textSize="60dp"
-                android:backgroundTint="@color/colorPrimary"
+                android:background="@color/colorPrimary"
                 android:layout_weight="9"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"/>
+                android:layout_height="0dp">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/pressurelabel"
+                        android:text="Pressure"
+                        android:textSize="35dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textColor="@color/colorLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/pressurevalue"
+                        android:text=" -- "
+                        android:textSize="45dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textColor="@color/colorLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/pressureunit"
+                        android:text="volts"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textColor="@color/colorLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/tensionlabel"
+                        android:text="Tension"
+                        android:textSize="35dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textColor="@color/colorLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/tensionvalue"
+                        android:text=" -- "
+                        android:textSize="45dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textColor="@color/colorLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/tensionunit"
+                        android:text="volts"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textColor="@color/colorLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
         <Button
                 android:id="@+id/chronic"
                 android:layout_marginVertical="1dp"
