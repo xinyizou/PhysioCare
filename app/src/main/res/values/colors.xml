@@ -6,6 +6,7 @@
     <color name="colorPrimary">#41aaa8</color>
     <color name="colorPrimaryDark">#3D8680</color>
     <color name="colorPrimaryBlack">#29524E</color>
+    <color name="colorAlmostBlack">#162B28</color>
     <color name="colorAccent">#2c003e</color>
     <color name="colorDark">#000000</color>
 </resources>

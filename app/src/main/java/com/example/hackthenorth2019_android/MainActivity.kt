@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         logout.setOnClickListener {
             signOut()
         }
+        learnmore.setOnClickListener {
+            goToLearnMore()
+        }
     }
 
     fun goToRehabActivity() {
@@ -41,6 +44,11 @@ class MainActivity : AppCompatActivity() {
 
     fun goToChatActivity() {
         val intent = Intent(this, ChatActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun goToLearnMore(){
+        val intent = Intent(this, LearnMoreActivity::class.java)
         startActivity(intent)
     }
 

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginVertical="40dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:text="What do the numbers mean?"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textSize="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="Tension"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textSize="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="Muscle Tension measurements range between 0 to 5 Volts. Higher voltages reflect more flexation in the muscle, whereas lower voltages reflect more relaxed muscles. While you may not realize it, incorrect posture and prolonged sitting often results in muscle stiffness."
+                    android:textSize="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="Posture"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textSize="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="This is the degrees of curvature in your neck, spine or back (depending on where it’s attached). Bad posture can place more pressure than necessary on your joints, so be sure to correct your posture regularly."
+                    android:textSize="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="Pressure"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textSize="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="Our pressure pads can gage the force (in Newtons) applied to it. Wear the pressure pad during a workout session and track exactly how much strength is applied by each limb."
+                    android:textSize="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:text="How to wear the device?"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textSize="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:text="See the guide for detailed instructions."
+                    android:textSize="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

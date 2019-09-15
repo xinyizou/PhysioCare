@@ -1,5 +1,6 @@
 package com.example.hackthenorth2019_android
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -41,7 +42,7 @@ class RehabActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_chronic)
+        setContentView(R.layout.activity_rehab)
         database = FirebaseDatabase.getInstance().reference
         readFB()
     }
@@ -52,7 +53,7 @@ class RehabActivity : AppCompatActivity() {
         val myRef = database.getReference("Subset1")
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val dataset = dataSnapshot.getValue(object : GenericTypeIndicator<HashMap<String, Any>?>(){})
+                val dataset = dataSnapshot.getValue(object : GenericTypeIndicator<HashMap<String, Any>?>() {})
 
                 parseData(dataset)
 
@@ -65,7 +66,7 @@ class RehabActivity : AppCompatActivity() {
         // [END read_message]
     }
 
-    fun parseData(dataset : HashMap<String, Any>?) {
+    fun parseData(dataset: HashMap<String, Any>?) {
 
         var muscle = dataset?.getValue("Muscle").toString().toFloat()
 //        tensionvalue.text = muscle.toString().subSequence(0, 5)
@@ -82,54 +83,54 @@ class RehabActivity : AppCompatActivity() {
 
         tensiontext.text = "Muscle tension is " + muscle + " volts"
 
-        var data9 = (muscledataset9/5f*300f).toInt()
+        var data9 = (muscledataset9 / 5f * 300f).toInt()
         val params9 = bar9.getLayoutParams() as LinearLayout.LayoutParams
         params9.height = data9
         bar9.setLayoutParams(params9)
         Log.d(TAG, "$data9")
 
-        var data8 = (muscledataset8/5f*300f).toInt()
+        var data8 = (muscledataset8 / 5f * 300f).toInt()
         val params8 = bar8.getLayoutParams() as LinearLayout.LayoutParams
         params8.height = data8
         bar8.setLayoutParams(params8)
 
-        var data7 = (muscledataset7/5f*300f).toInt()
+        var data7 = (muscledataset7 / 5f * 300f).toInt()
         val params7 = bar7.getLayoutParams() as LinearLayout.LayoutParams
         params7.height = data7
         bar7.setLayoutParams(params7)
 
-        var data6 = (muscledataset6/5f*300f).toInt()
+        var data6 = (muscledataset6 / 5f * 300f).toInt()
         val params6 = bar6.getLayoutParams() as LinearLayout.LayoutParams
         params6.height = data6
         bar6.setLayoutParams(params6)
 
 
-        var data5 = (muscledataset5/5f*300f).toInt()
+        var data5 = (muscledataset5 / 5f * 300f).toInt()
         val params5 = bar5.getLayoutParams() as LinearLayout.LayoutParams
         params5.height = data5
         bar5.setLayoutParams(params5)
 
-        var data4 = (muscledataset4/5f*300f).toInt()
+        var data4 = (muscledataset4 / 5f * 300f).toInt()
         val params4 = bar4.getLayoutParams() as LinearLayout.LayoutParams
         params4.height = data4
         bar4.setLayoutParams(params4)
 
-        var data3 = (muscledataset3/5f*300f).toInt()
+        var data3 = (muscledataset3 / 5f * 300f).toInt()
         val params3 = bar3.getLayoutParams() as LinearLayout.LayoutParams
         params3.height = data3
         bar3.setLayoutParams(params3)
 
-        var data2 = (muscledataset2/5f*300f).toInt()
+        var data2 = (muscledataset2 / 5f * 300f).toInt()
         val params2 = bar2.getLayoutParams() as LinearLayout.LayoutParams
         params2.height = data2
         bar2.setLayoutParams(params2)
 
-        var data1 = (muscledataset1/5f*300f).toInt()
+        var data1 = (muscledataset1 / 5f * 300f).toInt()
         val params1 = bar1.getLayoutParams() as LinearLayout.LayoutParams
         params1.height = data1
         bar1.setLayoutParams(params1)
 
-        var data0 = (muscledataset0/5f*300f).toInt()
+        var data0 = (muscledataset0 / 5f * 300f).toInt()
         val params0 = bar0.getLayoutParams() as LinearLayout.LayoutParams
         params0.height = data0
         bar0.setLayoutParams(params0)
@@ -150,55 +151,61 @@ class RehabActivity : AppCompatActivity() {
 
         posturetext.text = "Pressure applied is " + degree + " Newtons"
 
-        var ddata9 = (degreedataset9/360f*300f).toInt()
-        val dparams9 = pbar9.getLayoutParams() as LinearLayout.LayoutParams
-        dparams9.height = ddata9
-        pbar9.setLayoutParams(dparams9)
-        Log.d(TAG, "$ddata9")
+        if (muscle > 4.0) {
+            tensiontext.setTextColor(Color.RED)
+        } else if (muscle < 4.0) {
+            tensiontext.setTextColor(Color.BLACK)
 
-        var ddata8 = (degreedataset8/360f*300f).toInt()
-        val dparams8 = pbar8.getLayoutParams() as LinearLayout.LayoutParams
-        dparams8.height = ddata8
-        pbar8.setLayoutParams(dparams8)
+            var ddata9 = (degreedataset9 / 360f * 300f).toInt()
+            val dparams9 = pbar9.getLayoutParams() as LinearLayout.LayoutParams
+            dparams9.height = ddata9
+            pbar9.setLayoutParams(dparams9)
+            Log.d(TAG, "$ddata9")
 
-        var ddata7 = (degreedataset7/360f*300f).toInt()
-        val dparams7 = pbar7.getLayoutParams() as LinearLayout.LayoutParams
-        dparams7.height = ddata7
-        pbar7.setLayoutParams(dparams7)
+            var ddata8 = (degreedataset8 / 360f * 300f).toInt()
+            val dparams8 = pbar8.getLayoutParams() as LinearLayout.LayoutParams
+            dparams8.height = ddata8
+            pbar8.setLayoutParams(dparams8)
 
-        var ddata6 = (degreedataset6/360f*300f).toInt()
-        val dparams6 = pbar6.getLayoutParams() as LinearLayout.LayoutParams
-        dparams6.height = ddata6
-        pbar6.setLayoutParams(dparams6)
+            var ddata7 = (degreedataset7 / 360f * 300f).toInt()
+            val dparams7 = pbar7.getLayoutParams() as LinearLayout.LayoutParams
+            dparams7.height = ddata7
+            pbar7.setLayoutParams(dparams7)
 
-        var ddata5 = (degreedataset5/360f*300f).toInt()
-        val dparams5 = pbar5.getLayoutParams() as LinearLayout.LayoutParams
-        dparams5.height = ddata5
-        pbar5.setLayoutParams(dparams5)
+            var ddata6 = (degreedataset6 / 360f * 300f).toInt()
+            val dparams6 = pbar6.getLayoutParams() as LinearLayout.LayoutParams
+            dparams6.height = ddata6
+            pbar6.setLayoutParams(dparams6)
 
-        var ddata4 = (degreedataset4/360f*300f).toInt()
-        val dparams4 = pbar4.getLayoutParams() as LinearLayout.LayoutParams
-        dparams4.height = ddata4
-        pbar4.setLayoutParams(dparams4)
+            var ddata5 = (degreedataset5 / 360f * 300f).toInt()
+            val dparams5 = pbar5.getLayoutParams() as LinearLayout.LayoutParams
+            dparams5.height = ddata5
+            pbar5.setLayoutParams(dparams5)
 
-        var ddata3 = (degreedataset3/360f*300f).toInt()
-        val dparams3 = pbar3.getLayoutParams() as LinearLayout.LayoutParams
-        dparams3.height = ddata3
-        pbar3.setLayoutParams(dparams3)
+            var ddata4 = (degreedataset4 / 360f * 300f).toInt()
+            val dparams4 = pbar4.getLayoutParams() as LinearLayout.LayoutParams
+            dparams4.height = ddata4
+            pbar4.setLayoutParams(dparams4)
 
-        var ddata2 = (degreedataset2/360f*300f).toInt()
-        val dparams2 = pbar2.getLayoutParams() as LinearLayout.LayoutParams
-        dparams2.height = ddata2
-        pbar2.setLayoutParams(dparams2)
+            var ddata3 = (degreedataset3 / 360f * 300f).toInt()
+            val dparams3 = pbar3.getLayoutParams() as LinearLayout.LayoutParams
+            dparams3.height = ddata3
+            pbar3.setLayoutParams(dparams3)
 
-        var ddata1 = (degreedataset1/360f*300f).toInt()
-        val dparams1 = pbar1.getLayoutParams() as LinearLayout.LayoutParams
-        dparams1.height = ddata1
-        pbar1.setLayoutParams(dparams1)
+            var ddata2 = (degreedataset2 / 360f * 300f).toInt()
+            val dparams2 = pbar2.getLayoutParams() as LinearLayout.LayoutParams
+            dparams2.height = ddata2
+            pbar2.setLayoutParams(dparams2)
 
-        var ddata0 = (degreedataset0/360f*300f).toInt()
-        val dparams0 = pbar0.getLayoutParams() as LinearLayout.LayoutParams
-        dparams0.height = ddata0
-        pbar0.setLayoutParams(dparams0)
+            var ddata1 = (degreedataset1 / 360f * 300f).toInt()
+            val dparams1 = pbar1.getLayoutParams() as LinearLayout.LayoutParams
+            dparams1.height = ddata1
+            pbar1.setLayoutParams(dparams1)
+
+            var ddata0 = (degreedataset0 / 360f * 300f).toInt()
+            val dparams0 = pbar0.getLayoutParams() as LinearLayout.LayoutParams
+            dparams0.height = ddata0
+            pbar0.setLayoutParams(dparams0)
+        }
     }
 }

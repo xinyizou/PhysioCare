@@ -116,7 +116,7 @@ class ChatFragment : Fragment(), ReplyChipAdapter.ClickListener {
         })
 
         val messageList = ArrayList<Message>()
-        messageList.add(Message("Hello, can I help you with your rehab?", false, System.currentTimeMillis()))
+        messageList.add(Message("Hello, can I help you with your rehab? Let's set up an appointment", false, System.currentTimeMillis()))
         viewModel.setMessages(messageList)
     }
 

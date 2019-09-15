@@ -1,17 +1,27 @@
 package com.example.hackthenorth2019_android
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.LinearLayout
+import androidx.core.app.NotificationCompat
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_chronic.*
-import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 import kotlin.collections.HashMap
 
 class ChronicActivity : AppCompatActivity() {
+
+    private val ACTION_UPDATE_NOTIFICATION = "com.android.example.notifyme.ACTION_UPDATE_NOTIFICATION"
+
+    private val NOTIFICATION_ID = 1
+
+    private val PRIMARY_CHANNEL_ID = "primary_notification_channel"
+    private var mNotifyManager: NotificationManager? = null
 
     private lateinit var database: DatabaseReference
     var muscledataset0: Float = 0f
@@ -42,6 +52,9 @@ class ChronicActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chronic)
+
+        createNotificationChannel()
+
         database = FirebaseDatabase.getInstance().reference
         readFB()
     }
@@ -80,7 +93,17 @@ class ChronicActivity : AppCompatActivity() {
         muscledataset8 = muscledataset9
         muscledataset9 = muscle
 
+        var avgmuscle = (muscledataset0 + muscledataset1 + muscledataset2 + muscledataset3 + muscledataset4 + muscledataset5 + muscledataset6 + muscledataset7 + muscledataset8 + muscledataset9)/10
+
         tensiontext.text = "Muscle tension is " + muscle + " volts"
+        if (muscle > 4.0) {
+            tensiontext.setTextColor(Color.RED)
+        }
+
+        else if (muscle < 4.0) {
+            tensiontext.setTextColor(Color.BLACK)
+        }
+
 
         var data9 = (muscledataset9/5f*300f).toInt()
         val params9 = bar9.getLayoutParams() as LinearLayout.LayoutParams
@@ -148,7 +171,17 @@ class ChronicActivity : AppCompatActivity() {
         degreedataset8 = degreedataset9
         degreedataset9 = degree
 
+        var avgdegree = (degreedataset0 + degreedataset1 + degreedataset2 + degreedataset3 + degreedataset4 + degreedataset5 + degreedataset6 + degreedataset7 + degreedataset8 + degreedataset9)/10
+
         posturetext.text = "Posture degree is " + degree
+
+        if (degree > 30.0) {
+            posturetext.setTextColor(Color.RED)
+        }
+
+        else if (degree < 30.0) {
+            posturetext.setTextColor(Color.BLACK)
+        }
 
         var ddata9 = (degreedataset9/360f*300f).toInt()
         val dparams9 = pbar9.getLayoutParams() as LinearLayout.LayoutParams
@@ -201,13 +234,77 @@ class ChronicActivity : AppCompatActivity() {
         dparams0.height = ddata0
         pbar0.setLayoutParams(dparams0)
 
-        if (muscle > 2.5 && degree > 10) {
-
+        //var danger = false;
+        if (avgmuscle > 4.0 && avgdegree > 30.0) {
+            //danger = true;
+            sendNotification("Bad posture strains muscles and tendons, please refer to our guide for proper posture.")
         }
 
-        else if (muscle > 2.5) {
-
+        else if (avgmuscle > 4.0) {
+            sendNotification("Your muscles are extremely tense, likely due to prolonged sitting. We recommend that you stretch as soon as possible.")
         }
+    }
+
+    fun createNotificationChannel() {
+
+        // Create a notification manager object.
+        val mNotifyManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+
+        // Notification channels are only available in OREO and higher.
+        // So, add a check on SDK version.
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+            // Create the NotificationChannel with all the parameters.
+            val notificationChannel = NotificationChannel(
+                PRIMARY_CHANNEL_ID, "Mascot Notif",
+                NotificationManager.IMPORTANCE_HIGH
+            )
+
+            notificationChannel.enableLights(true)
+            notificationChannel.lightColor = Color.RED
+            notificationChannel.enableVibration(true)
+            notificationChannel.description = "Mascot desc"
+
+            mNotifyManager.createNotificationChannel(notificationChannel)
+        }
+    }
+    fun sendNotification(msg: String) {
+
+        // Sets up the pending intent to update the notification.
+        // Corresponds to a press of the Update Me! button.
+        val updateIntent = Intent(ACTION_UPDATE_NOTIFICATION)
+        val updatePendingIntent = PendingIntent.getBroadcast(
+            this,
+            NOTIFICATION_ID, updateIntent, PendingIntent.FLAG_ONE_SHOT
+        )
+
+        // Build the notification with all of the parameters using helper
+        // method.
+        val notifyBuilder = getNotificationBuilder(msg)
+
+        // Deliver the notification.
+        mNotifyManager?.notify(NOTIFICATION_ID, notifyBuilder.build())
 
     }
+
+    private fun getNotificationBuilder(msg: String): NotificationCompat.Builder {
+
+        // Set up the pending intent that is delivered when the notification
+        // is clicked.
+        val notificationIntent = Intent(this, MainActivity::class.java)
+        val notificationPendingIntent = PendingIntent.getActivity(
+            this, NOTIFICATION_ID, notificationIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        // Build the notification with all of the parameters.
+        return NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
+            .setContentTitle("title")
+            .setContentText(msg)
+            .setAutoCancel(true).setContentIntent(notificationPendingIntent)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setDefaults(NotificationCompat.DEFAULT_ALL)
+    }
+
+
 }

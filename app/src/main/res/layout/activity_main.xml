@@ -30,8 +30,18 @@
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            <Button
+
+            <ImageView
+                    android:id="@+id/image"
                     app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/recovery"
+
+            />
+            <Button
+                    app:layout_constraintTop_toBottomOf="@id/image"
                     android:id="@+id/rehab"
                     android:layout_marginVertical="1dp"
                     android:text="Rehab"
@@ -39,7 +49,7 @@
                     android:textSize="50dp"
                     android:backgroundTint="@color/colorPrimary"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"/>
+                    android:layout_height="200dp" tools:layout_editor_absoluteX="16dp"/>
             <Button
                     app:layout_constraintTop_toBottomOf="@id/rehab"
                     android:id="@+id/chronic"
@@ -67,22 +77,25 @@
 
             <Button
                     app:layout_constraintTop_toBottomOf="@id/chat"
+                    android:id="@+id/learnmore"
+                    android:text="Learn More"
+                    android:textSize="30dp"
+                    android:backgroundTint="@color/colorAlmostBlack"
+                    android:textColor="@color/colorLight"
+                    android:layout_marginVertical="1dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"/>
+
+            <Button
+                    app:layout_constraintTop_toBottomOf="@id/learnmore"
                     android:id="@+id/logout"
                     android:text="Logout"
-                    android:textSize="30dp"
+                    android:textSize="25dp"
                     android:backgroundTint="@color/colorDark"
                     android:textColor="@color/colorLight"
                     android:layout_marginVertical="1dp"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"/>
-
-            <ImageView
-                    app:layout_constraintTop_toBottomOf="@id/logout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerInside"
-
-                    />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
