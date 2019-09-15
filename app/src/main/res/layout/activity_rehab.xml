@@ -9,7 +9,6 @@
         android:layout_marginHorizontal="10dp"
         tools:context=".MainActivity">
 
-
     <TextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
@@ -21,132 +20,223 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:fontFamily="@font/architects_daughter"/>
 
-    <LinearLayout
-
-            android:orientation="vertical"
+    <ScrollView
             app:layout_constraintTop_toBottomOf="@id/text"
-            android:layout_width= "match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
 
-        <LinearLayout
-                android:orientation="horizontal"
-                android:id="@+id/rehablivedata"
-                android:layout_marginVertical="1dp"
-                android:layout_marginHorizontal="4dp"
-                android:paddingHorizontal="10dp"
-                android:textColor="@color/colorLight"
-                android:background="@color/colorPrimary"
-                android:layout_weight="9"
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width= "match_parent"
+                android:layout_height="wrap_content">
 
             <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:orientation="horizontal"
+                    android:gravity="bottom"
+                    android:id="@+id/rehabtensiongraph"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:paddingHorizontal="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
 
                 <TextView
-                        android:id="@+id/pressurelabel"
-                        android:text="Pressure"
-                        android:textSize="35dp"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textColor="@color/colorLight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar0"/>
                 <TextView
-                        android:id="@+id/pressurevalue"
-                        android:text=" -- "
-                        android:textSize="45dp"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textColor="@color/colorLight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar1"/>
                 <TextView
-                        android:id="@+id/pressureunit"
-                        android:text="volts"
-                        android:textSize="20dp"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textColor="@color/colorLight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar2"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar3"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar4"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar5"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar6"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar7"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar8"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar9"/>
+
             </LinearLayout>
+
+            <TextView
+                    app:layout_constraintTop_toBottomOf="@+id/rehabtensiongraph"
+                    android:id="@+id/tensiontext"
+                    android:text=""
+                    android:textSize="20dp"
+                    android:textColor="@color/colorPrimaryBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
             <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    app:layout_constraintTop_toBottomOf="@+id/tensiontext"
+                    android:orientation="horizontal"
+                    android:gravity="bottom"
+                    android:id="@+id/rehabpressuregraph"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:paddingHorizontal="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
 
                 <TextView
-                        android:id="@+id/tensionlabel"
-                        android:text="Tension"
-                        android:textSize="35dp"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textColor="@color/colorLight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:gravity="bottom"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar0"/>
                 <TextView
-                        android:id="@+id/tensionvalue"
-                        android:text=" -- "
-                        android:textSize="45dp"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textColor="@color/colorLight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar1"/>
                 <TextView
-                        android:id="@+id/tensionunit"
-                        android:text="volts"
-                        android:textSize="20dp"
-                        android:fontFamily="@font/open_sans_semibold"
-                        android:textColor="@color/colorLight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar2"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar3"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar4"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar5"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar6"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar7"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar8"/>
+                <TextView
+                        android:gravity="bottom"
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar9"/>
+
             </LinearLayout>
 
+            <TextView
+                    app:layout_constraintTop_toBottomOf="@+id/rehabpressuregraph"
+                    android:id="@+id/posturetext"
+                    android:text=""
+                    android:textSize="20dp"
+                    android:textColor="@color/colorPrimaryBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-
-        </LinearLayout>
-        <Button
-                android:id="@+id/chronic"
-                android:layout_marginVertical="1dp"
-                android:text="Chronic"
-                android:textColor="@color/colorLight"
-                android:textSize="60dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:layout_weight="9"
-                android:layout_width="match_parent"
-                android:fontFamily="@font/open_sans_semibold"
-                android:layout_height="0dp"/>
-
-        <Button
-                android:id="@+id/chat"
-                android:text="Chat"
-                android:textSize="40dp"
-                android:textColor="@color/colorLight"
-                android:layout_marginVertical="1dp"
-                android:backgroundTint="@color/colorPrimaryBlack"
-                android:gravity="center"
-                android:layout_weight="5"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:fontFamily="@font/open_sans_semibold"/>
-
-        <Button
-                android:id="@+id/logout"
-                android:text="Logout"
-                android:textSize="25dp"
-                android:backgroundTint="@color/colorDark"
-                android:textColor="@color/colorLight"
-                android:layout_weight="3"
-                android:layout_marginVertical="1dp"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"/>
-    </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
