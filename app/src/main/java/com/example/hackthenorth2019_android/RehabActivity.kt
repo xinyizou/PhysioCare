@@ -148,7 +148,7 @@ class RehabActivity : AppCompatActivity() {
         degreedataset8 = degreedataset9
         degreedataset9 = degree
 
-        posturetext.text = "Pressure applied is " + degree + "Newtons"
+        posturetext.text = "Pressure applied is " + degree + " Newtons"
 
         var ddata9 = (degreedataset9/360f*300f).toInt()
         val dparams9 = pbar9.getLayoutParams() as LinearLayout.LayoutParams

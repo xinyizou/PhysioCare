@@ -39,7 +39,7 @@
                     android:layout_marginHorizontal="4dp"
                     android:paddingHorizontal="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp">
+                    android:layout_height="200dp">
 
                 <TextView
                         android:gravity="bottom"

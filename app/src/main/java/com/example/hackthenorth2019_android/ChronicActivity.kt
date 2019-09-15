@@ -200,5 +200,14 @@ class ChronicActivity : AppCompatActivity() {
         val dparams0 = pbar0.getLayoutParams() as LinearLayout.LayoutParams
         dparams0.height = ddata0
         pbar0.setLayoutParams(dparams0)
+
+        if (muscle > 2.5 && degree > 10) {
+
+        }
+
+        else if (muscle > 2.5) {
+
+        }
+
     }
 }
