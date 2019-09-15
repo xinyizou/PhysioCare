@@ -33,115 +33,170 @@
 
             <LinearLayout
                     android:orientation="horizontal"
-                    android:id="@+id/rehablivedata"
+                    android:gravity="bottom"
+                    android:id="@+id/rehabtensiongraph"
                     android:layout_marginVertical="1dp"
                     android:layout_marginHorizontal="4dp"
                     android:paddingHorizontal="10dp"
-                    android:textColor="@color/colorLight"
-                    android:background="@color/colorPrimary"
-                    android:layout_weight="9"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp">
+                    android:layout_height="300dp">
 
-                <LinearLayout
-                        android:orientation="vertical"
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                    <TextView
-                            android:id="@+id/tensionlabel"
-                            android:text="Tension"
-                            android:textSize="30dp"
-                            android:fontFamily="@font/open_sans_semibold"
-                            android:textColor="@color/colorLight"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                    <TextView
-                            android:id="@+id/tensionvalue"
-                            android:text=" -- "
-                            android:textSize="30dp"
-                            android:fontFamily="@font/open_sans_semibold"
-                            android:textColor="@color/colorLight"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                    <TextView
-                            android:id="@+id/tensionunit"
-                            android:text="volts"
-                            android:textSize="15dp"
-                            android:fontFamily="@font/open_sans_semibold"
-                            android:textColor="@color/colorLight"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-                <LinearLayout
-                        android:orientation="vertical"
+                        android:id="@+id/bar0"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                    <TextView
-                            android:id="@+id/posture"
-                            android:text="Posture"
-                            android:textSize="30dp"
-                            android:fontFamily="@font/open_sans_semibold"
-                            android:textColor="@color/colorLight"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                    <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        <TextView
-                                android:id="@+id/posturedegrees"
-                                android:text=" -- "
-                                android:textSize="30dp"
-                                android:textColor="@color/colorLight"
-                                android:fontFamily="@font/open_sans_semibold"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
-                        <TextView
-                                android:text="degrees"
-                                android:textSize="15dp"
-                                android:layout_marginLeft="20dp"
-                                android:textColor="@color/colorLight"
-                                android:fontFamily="@font/open_sans_semibold"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:id="@+id/postureohm"
-                                android:text=" -- "
-                                android:textSize="30dp"
-                                android:fontFamily="@font/open_sans_semibold"
-                                android:textColor="@color/colorLight"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
-                        <TextView
-                                android:text="ohm"
-                                android:textSize="15dp"
-                                android:layout_marginLeft="20dp"
-                                android:textColor="@color/colorLight"
-                                android:fontFamily="@font/open_sans_semibold"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
-                    </LinearLayout>
-
-                </LinearLayout>
-
+                        android:id="@+id/bar1"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar2"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar3"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar4"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar5"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar6"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar7"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar8"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/bar9"/>
 
             </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:gravity="bottom"
+                    android:id="@+id/rehabpressuregraph"
+                    android:layout_marginVertical="1dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:paddingHorizontal="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar0"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar1"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar2"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar3"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar4"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar5"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar6"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar7"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar8"/>
+                <View
+                        android:layout_marginHorizontal="1dp"
+                        android:layout_width="0dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/pbar9"/>
+
+            </LinearLayout>
+
             <Button
                     android:id="@+id/chronic"
                     android:layout_marginVertical="1dp"
